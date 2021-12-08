@@ -4,6 +4,7 @@ const session = require('express-session');
 const Filestore = require('session-file-store')(session);
 const path = require('path');
 const lkRouter = require('./routes/lk.routes');
+const regRouter = require('./routes/registration.routes');
 const bcrypt = require('bcrypt');
 const {User} = require('./db/models/');
 
@@ -30,37 +31,12 @@ app.use(express.json());
 app.use(morgan("dev"));
 app.use(session(sessionConfig));
 
-app.post("/registration", async (req, res) => {
-  const findLogin = await User.findOne({
-    where: {
-      login: req.body.login,
-    },
-  });
 
-  if (findLogin) {
-    res.render("alreadyRegistered");
-  } else {
-    if(req.body.password1 === req.body.password2){
-    const hashedPassword = await bcrypt.hash(req.body.password1, 8);
-    await User.create({
-      login: req.body.login,
-      email: req.body.email,
-      isAdmin: false,
-      password: hashedPassword,
-    });
-  
-    res.render("lk");
-  } else {
-      res.json({error: 'no'})
-    }
-  }
-});
 
-app.get("/registration", async (req, res) => {
-  res.render("registration");
-});
+
 
 app.use('/lk', lkRouter);
+app.use('/registration', regRouter);
 
 
 app.listen(PORT, () => {
