@@ -1,26 +1,39 @@
 const bcrypt = require('bcrypt');
+const router = require('express').Router();
+const { User } = require('../db/models');
 
-app.post('somepath', async (req, res) => {
+router.get('/', (req, res) => {
+  res.render('login');
+});
+
+router.post('/', async (req, res) => {
   const { email, password } = req.body;
   const user = await User.findOne({
     where: {
       email,
     },
   });
+
   if (!user) {
     res.json({ isUser: false });
-  };
+    return;
+  }
 
   const isAuthenticate = await bcrypt.compare(password, user.password);
-
   if (isAuthenticate) {
-    req.session.name = user.name;
-    req.json({ 
+    req.session.name = user.login;
+    res.json({
       isCorrectPassword: true,
-      name: user.name });
-  };
-
-  else {
-    res.json({ isCorrectPassword: false });
+      name: user.login,
+      isUser: true,
+    });
+    return;
   }
-})
+
+  res.json({
+    isCorrectPassword: false,
+    isUser: true,
+  });
+});
+
+module.exports = router;
