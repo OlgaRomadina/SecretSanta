@@ -51,8 +51,8 @@ updBtn?.addEventListener('click', async (event) => {
 
 editForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
-  const { method, action } = event.target;
-  const response = await fetch('/lk', {
+  const { action } = event.target;
+  const response = await fetch(action, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
