@@ -1,7 +1,7 @@
 <h2>Личный кабинет</h2>
-<h3>Создать карточку</h3>
 
 <form name="js-create-card" class="js-create-card" action="/lk" method="POST">
+  <h3>Создать карточку</h3>
   <input type="text" name="aboutInput" placeholder="Что хотите получить?">
   <input type="text" name="locationInput" placeholder="Куда отправить подарок?">
   <button type="submit" class="create-card-btn">Создать карточку</button>
@@ -9,9 +9,19 @@
 
 <div class="card">
   <h3>Ваша карточка:</h3>
-  <p>Описание:</p>
+  <p><b>Описание:</b></p>
   <p class="cardDescription"></p>
-  <p>Куда отправлять:</p>
+  <p><b>Куда отправлять:</b></p>
   <p class="cardLocation"></p>
+  <p><a href="" class="updBtn">Редактировать карточку</a></p>
   <p><a href="" class="delBtn">Удалить карточку</a></p>
+</div>
+
+<div class="editCard">
+  <h3>Редактировать карточку</h3>
+  <form action="/lk" method="PUT" name="editForm" class="editForm">
+    <input type="text" name="editAboutInput" class="editAboutInput" placeholder="Изменить описание">
+    <input type="text" name="editLocInput" class="editLocInput" placeholder="Изменить локацию">
+    <button type="submit" class="edit-card-btn">Изменить карточку</button>
+  </form>
 </div>
