@@ -5,7 +5,7 @@ const Filestore = require('session-file-store')(session);
 const path = require('path');
 
 const lkRouter = require('./routes/lk.routes');
-const loginRouter = require('./routes/login');
+const loginRouter = require('./routes/login.routes');
 const regRouter = require('./routes/registration.routes');
 
 const PORT = process.env.PORT ?? 3000;
