@@ -1,4 +1,5 @@
 sessions/
+db/config/
 # Logs
 logs
 *.log
