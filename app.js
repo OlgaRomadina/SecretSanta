@@ -8,7 +8,9 @@ const bcrypt = require('bcrypt');
 const {User} = require('./db/models/');
 
 const PORT = process.env.PORT ?? 3000;
+
 const app = express();
+
 const sessionConfig = {
   store: new Filestore(),
   name: "user_sid",
@@ -29,6 +31,36 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(morgan("dev"));
 app.use(session(sessionConfig));
+
+app.get('/login', (req, res) => {
+  res.render('login');
+});
+
+app.post('/login', async (req, res) => {
+  const { email, password } = req.body;
+  const user = await User.findOne({
+    where: {
+      email,
+    },
+  });
+  if (!user) {
+    res.json({ isUser: false });
+    return;
+  }
+
+  const isAuthenticate = await bcrypt.compare(password, user.password);
+
+  if (isAuthenticate) {
+    req.session.name = user.name;
+    req.json({
+      isCorrectPassword: true,
+      name: user.name,
+    });
+    return;
+  }
+
+  res.json({ isCorrectPassword: false });
+});
 
 app.post("/registration", async (req, res) => {
   const findLogin = await User.findOne({
@@ -61,7 +93,6 @@ app.get("/registration", async (req, res) => {
 });
 
 app.use('/lk', lkRouter);
-
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
