@@ -49,15 +49,15 @@ app.post("/registration", async (req, res) => {
       password: hashedPassword,
     });
   
-    res.render("login");
+    res.render("lk");
   } else {
-      res.json(error)
+      res.json({error: 'no'})
     }
   }
 });
 
-app.get("/login", async (req, res) => {
-  res.render("login");
+app.get("/registration", async (req, res) => {
+  res.render("registration");
 });
 
 app.use('/lk', lkRouter);
