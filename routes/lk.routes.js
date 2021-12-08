@@ -11,10 +11,12 @@ router.post('/', (req, res) => {
   });
 });
 
-// router.delete('/', (req, res) => {
-//   res.json({
-
-//   })
-// })
+router.delete('/', (req, res) => {
+  try {
+    res.json({ isDeleted: 'deleted!' });
+  } catch (error) {
+    res.json({ isDeleted: error.message });
+  }
+});
 
 module.exports = router;
