@@ -14,9 +14,9 @@ document.login.addEventListener('submit', async (event) => {
   const responseJson = await response.json();
   if (!responseJson.isUser) {
     return alert('Пользователь с таким email не найден');
-  };
+  }
   if (!responseJson.isCorrectPassword) {
     return alert('Неправильный пароль');
-  };
-  else alert(`Добро пожаловать, ${responseJson.name}`);
+  }
+  return alert(`Добро пожаловать, ${responseJson.name}`);
 });
