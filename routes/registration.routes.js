@@ -1,4 +1,6 @@
-const router = require('express').Router();
+const router = require("express").Router();
+const {User} = require('../db/models/');
+const bcrypt = require('bcrypt');
 
 router.post("/", async (req, res) => {
   const findLogin = await User.findOne({
@@ -10,18 +12,18 @@ router.post("/", async (req, res) => {
   if (findLogin) {
     res.render("alreadyRegistered");
   } else {
-    if(req.body.password1 === req.body.password2){
-    const hashedPassword = await bcrypt.hash(req.body.password1, 8);
-    await User.create({
-      login: req.body.login,
-      email: req.body.email,
-      isAdmin: false,
-      password: hashedPassword,
-    });
-  
-    res.redirect("lk");
-  } else {
-      res.json({error: 'no'})
+    if (req.body.password1 === req.body.password2) {
+      const hashedPassword = await bcrypt.hash(req.body.password1, 8);
+      await User.create({
+        login: req.body.login,
+        email: req.body.email,
+        isAdmin: false,
+        password: hashedPassword,
+      });
+
+      res.redirect("lk");
+    } else {
+      res.json({ error: "no" });
     }
   }
 });

@@ -5,8 +5,7 @@ const Filestore = require('session-file-store')(session);
 const path = require('path');
 const lkRouter = require('./routes/lk.routes');
 const regRouter = require('./routes/registration.routes');
-const bcrypt = require('bcrypt');
-const {User} = require('./db/models/');
+
 
 const PORT = process.env.PORT ?? 3000;
 
@@ -63,13 +62,6 @@ app.post('/login', async (req, res) => {
 
   res.json({ isCorrectPassword: false });
 });
-
-app.post("/registration", async (req, res) => {
-  const findLogin = await User.findOne({
-    where: {
-      login: req.body.login,
-    },
-  });
 
 
 
