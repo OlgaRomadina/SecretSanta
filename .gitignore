@@ -1,5 +1,4 @@
-session
-
+sessions/
 # Logs
 logs
 *.log
