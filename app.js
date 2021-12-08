@@ -13,23 +13,23 @@ const app = express();
 
 const sessionConfig = {
   store: new Filestore(),
-  name: "user_sid",
-  secret: process.env.SECRET ?? "BIG_SECRET",
+  name: 'user_sid',
+  secret: process.env.SECRET ?? 'BIG_SECRET',
   resave: false,
-  saveUnitialized: false,
+  saveUninitialized: false,
   cookie: {
     maxAge: 1000 * 60 * 60 * 24 * 7,
     httpOnly: true,
   },
 };
 
-app.set("view engine", "hbs");
-app.set("views", path.join(__dirname, "views"));
+app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, 'views'));
 
-app.use(express.static(path.join((__dirname, "public"))));
+app.use(express.static(path.join((__dirname, 'public'))));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(morgan("dev"));
+app.use(morgan('dev'));
 app.use(session(sessionConfig));
 
 
@@ -72,5 +72,5 @@ app.use('/registration', regRouter);
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
-  console.log("Сервер слушает порт ", PORT);
+  console.log('Сервер слушает порт ', PORT);
 });
