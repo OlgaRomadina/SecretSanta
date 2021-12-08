@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const session = require('express-session');
 const Filestore = require('session-file-store')(session);
 const path = require('path');
+const lkRouter = require('./routes/lk.routes');
 
 const PORT = process.env.PORT ?? 3000;
 const app = express();
@@ -26,6 +27,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(morgan('dev'));
 app.use(session(sessionConfig));
+
+app.use('/lk', lkRouter);
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console

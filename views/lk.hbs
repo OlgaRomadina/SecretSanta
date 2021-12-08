@@ -1,0 +1,16 @@
+<h2>Личный кабинет</h2>
+<h3>Создать карточку</h3>
+
+<form name="js-create-card" action="/lk" moethod="POST">
+  <input type="text" name="about-input" placeholder="Что хотите получить?">
+  <input type="text" name="location-input" placeholder="Куда отправить подарок?">
+  <button type="submit">Создать карточку</button>
+</form>
+
+<div class="card">
+  <h3>Ваша карточка:</h3>
+  <p>Описание:</p>
+  <p class="card-description"></p>
+  <p>Куда отправлять:</p>
+  <p class="card-location"></p>
+</div>
