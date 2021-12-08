@@ -33,8 +33,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 app.use(session(sessionConfig));
 
-<<<<<<< HEAD
-=======
+
 app.get('/login', (req, res) => {
   res.render('login');
 });
@@ -71,7 +70,7 @@ app.post("/registration", async (req, res) => {
       login: req.body.login,
     },
   });
->>>>>>> 2ee4ee7b3297302e474ed7547c538b6f57a2796e
+
 
 
 
