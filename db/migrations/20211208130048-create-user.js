@@ -23,6 +23,7 @@ module.exports = {
       },
       isAdmin: {
         type: Sequelize.TEXT,
+        default: false,
       },
       createdAt: {
         allowNull: false,
