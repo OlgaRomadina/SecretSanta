@@ -41,6 +41,10 @@ app.use('/login', loginRouter);
 app.use('/registration', regRouter);
 app.use('/adminLk', adminRouter);
 
+app.get('*', (req, res) => {
+  res.render('404');
+});
+
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
   console.log('Сервер слушает порт ', PORT);
