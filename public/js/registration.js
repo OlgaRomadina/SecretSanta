@@ -1,17 +1,9 @@
 // console.log(document.regForm);
 const regSubmit = document.regForm;
 
-regSubmit.addEventListener('submit', async (event) => {
+regSubmit?.addEventListener('submit', async (event) => {
   event.preventDefault();
-
-  const {
-    login,
-    email,
-    password1,
-    password2,
-
-  } = event.target;
-
+  const { login, email, password1, password2 } = event.target;
   if (password1.value !== password2.value) {
     alert('Пароли не совпадают');
     return;

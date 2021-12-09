@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon --ignore ./session",
+    "dev": "nodemon --ignore session",
     "start": "node app.js"
   },
   "repository": {

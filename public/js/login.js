@@ -1,4 +1,8 @@
-document.login.addEventListener('submit', async (event) => {
+const alertDiv = document.querySelector('.alert');
+const alertMsg = document.querySelector('.alertMsg');
+const closeBtn = document.querySelector('.closeBtn');
+
+document.login?.addEventListener('submit', async (event) => {
   event.preventDefault();
   const { email, password } = document.login;
   const response = await fetch('/login', {
@@ -13,10 +17,18 @@ document.login.addEventListener('submit', async (event) => {
   });
   const responseJson = await response.json();
   if (!responseJson.isUser) {
-    return alert('Пользователь с таким email не найден');
+    alertMsg.innerHTML = 'Пользователь с таким email не найден';
+    alertDiv.style.display = 'block';
+    return;
   }
   if (!responseJson.isCorrectPassword) {
-    return alert('Неправильный пароль');
+    alertMsg.innerHTML = 'Неправильный пароль';
+    alertDiv.style.display = 'block';
+    return;
   }
-  return alert(`Добро пожаловать, ${responseJson.name}`);
+  window.location.href = '/lk';
+});
+
+closeBtn?.addEventListener('click', () => {
+  alertDiv.style.display = 'none';
 });
