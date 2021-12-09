@@ -37,7 +37,7 @@ button {
   background-color: #F2584E;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 15px;
   transition: .3s;
   position: relative;
   transform: translate(-50%, 0); 

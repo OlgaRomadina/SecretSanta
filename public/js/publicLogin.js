@@ -17,18 +17,18 @@ document.login?.addEventListener('submit', async (event) => {
   });
   const responseJson = await response.json();
   if (!responseJson.isUser) {
-    alertMsgReg.innerHTML = 'Пользователь с таким email не найден';
-    alertDivReg.style.display = 'block';
+    alertMsg.innerHTML = 'Пользователь с таким email не найден';
+    alertDiv.style.display = 'block';
     return;
   }
   if (!responseJson.isCorrectPassword) {
-    alertMsgReg.innerHTML = 'Неправильный пароль';
-    alertDivReg.style.display = 'block';
+    alertMsg.innerHTML = 'Неправильный пароль';
+    alertDiv.style.display = 'block';
     return;
   }
   window.location.href = '/lk';
 });
 
-closeBtnReg?.addEventListener('click', () => {
-  alertDivReg.style.display = 'none';
+closeBtn?.addEventListener('click', () => {
+  alertDiv.style.display = 'none';
 });
