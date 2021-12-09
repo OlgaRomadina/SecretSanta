@@ -1,17 +1,16 @@
 body {
-  color: white;
   font-size: 16px;
   font-family: 'Source Sans 3', sans-serif;
-  background-image: url(https://s1.1zoom.me/big0/471/Winter_Christmas_Night_Snow_Spruce_Christmas_tree_575032_1280x800.jpg);
+  background-color: #fff;
 }
 
 p {
   font-size: 16px;
-  color: rgb(211, 211, 211);
+  color: rgb(36, 36, 36);
 }
 
 a:visited {
-  color: white;
+  color: rgb(36, 36, 36);
 }
 
 .card {
@@ -50,7 +49,7 @@ button {
   height: 50px;
   font-size: 16px;
   background-color: #F2584E;
-  color: white;
+  color: rgb(242, 242, 242);
   border: none;
   border-radius: 15px;
   transition: .3s;
@@ -67,13 +66,13 @@ button:hover {
 
 h2 {
   font-size: 35px;
-  color: white;
+  color: rgb(36, 36, 36);
   text-align: center;
 }
 
 h3 {
   text-align: center;
-  color: white;
+  color: rgb(36, 36, 36);
 }
 
 .card {
@@ -125,7 +124,7 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: white;
+  color: rgb(36, 36, 36);
 }
 
 .notFound {
