@@ -38,6 +38,9 @@ app.use('/', indexRouter);
 app.use('/lk', lkRouter);
 app.use('/login', loginRouter);
 app.use('/registration', regRouter);
+app.get('*', (req, res) => {
+  res.render('404');
+});
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
