@@ -20,6 +20,8 @@ p {
   width: 600px;
   margin: 0 auto;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 input {
@@ -70,7 +72,15 @@ h3 {
   -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
   -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
   box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-  padding: 20px 40px;
+  padding: 5px 40px;
+}
+
+.card-admin {
+  width: 400px,
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  padding: 5px 40px;
 }
 
 .alert, .alertReg {
@@ -93,6 +103,15 @@ nav ul li {
   display: inline-block;
   margin: 0 10px;
   right: 0px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.logo {
+  position: fixed;
 }
 
 nav a {
