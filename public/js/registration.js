@@ -5,11 +5,9 @@ const closeBtnReg = document.querySelector('.closeBtnReg');
 
 regSubmit?.addEventListener('submit', async (event) => {
   event.preventDefault();
-
   const {
     login, email, password1, password2,
   } = event.target;
-
   if (password1.value !== password2.value) {
     alertMsgReg.innerHTML = 'Пароли не совпадают';
     alertDivReg.style.display = 'block';
