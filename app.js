@@ -7,6 +7,7 @@ const path = require('path');
 const lkRouter = require('./routes/lk.routes');
 const loginRouter = require('./routes/login.routes');
 const regRouter = require('./routes/registration.routes');
+const indexRouter = require('./routes/index.routes');
 
 const PORT = process.env.PORT ?? 3000;
 
@@ -33,6 +34,7 @@ app.use(express.json());
 app.use(morgan('dev'));
 app.use(session(sessionConfig));
 
+app.use('/', indexRouter);
 app.use('/lk', lkRouter);
 app.use('/login', loginRouter);
 app.use('/registration', regRouter);

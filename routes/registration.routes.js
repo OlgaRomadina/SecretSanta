@@ -9,7 +9,10 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
   const { login, email, password } = req.body;
   if (password.length < 8) {
-    res.json({ thisUser: false, message: 'Длина пароля должна быть больше 8-ми символов' });
+    res.json({
+      thisUser: false,
+      message: 'Длина пароля должна быть больше 8-ми символов',
+    });
   }
   let newUser;
   const findLogin = await User.findOne({
@@ -19,7 +22,10 @@ router.post('/', async (req, res) => {
   });
 
   if (findLogin) {
-    res.json({ thisUser: false, message: 'Пользователь с таким логином или почтой уже существует' });
+    res.json({
+      thisUser: false,
+      message: 'Пользователь с таким логином или почтой уже существует',
+    });
   } else {
     const hashedPassword = await bcrypt.hash(password, 10);
     newUser = await User.create({
