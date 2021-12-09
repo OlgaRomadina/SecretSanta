@@ -67,7 +67,7 @@ h3 {
   padding: 20px 40px;
 }
 
-.alert {
+.alert, .alertReg {
   width: 400px;
   height: 140px;
   border-radius: 10px;
@@ -80,4 +80,15 @@ h3 {
 
 .closeBtn {
   margin-top: 10px;
+}
+
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 10px;
+  right: 0px;
+}
+
+nav a {
+  text-decoration: none;
 }

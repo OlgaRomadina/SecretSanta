@@ -1,5 +1,7 @@
-// console.log(document.regForm);
 const regSubmit = document.regForm;
+const alertDivReg = document.querySelector('.alertReg');
+const alertMsgReg = document.querySelector('.alertMsgReg');
+const closeBtnReg = document.querySelector('.closeBtnReg');
 
 regSubmit?.addEventListener('submit', async (event) => {
   event.preventDefault();
@@ -7,11 +9,13 @@ regSubmit?.addEventListener('submit', async (event) => {
   const { login, email, password1, password2 } = event.target;
 
   if (password1.value !== password2.value) {
-    alert('Пароли не совпадают');
+    alertMsgReg.innerHTML = 'Пароли не совпадают';
+    alertDivReg.style.display = 'block';
     return;
   }
   if (!login || !email || !password1.value || !password2.value) {
-    alert('Заполни все поля, братишка');
+    alertMsgReg.innerHTML = 'Все поля не заполнены';
+    alertDivReg.style.display = 'block';
     return;
   }
 
@@ -29,10 +33,15 @@ regSubmit?.addEventListener('submit', async (event) => {
 
   const result = await response.json();
   if (result.thisUser) {
-    alert(result.message);
+    alertMsgReg.innerHTML = result.message;
+    alertDivReg.style.display = 'block';
   } else {
-    alert(result.message);
+    alertMsgReg.innerHTML = result.message;
+    alertDivReg.style.display = 'block';
   }
+});
 
-  console.log(event.target.action);
+closeBtnReg?.addEventListener('click', () => {
+  alertDivReg.style.display = 'none';
+  window.location.href = '/login';
 });
