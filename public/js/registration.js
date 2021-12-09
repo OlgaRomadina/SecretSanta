@@ -13,12 +13,6 @@ regSubmit?.addEventListener('submit', async (event) => {
     alertDivReg.style.display = 'block';
     return;
   }
-  if (!login || !email || !password1.value || !password2.value) {
-    alertMsgReg.innerHTML = 'Все поля не заполнены';
-    alertDivReg.style.display = 'block';
-    return;
-  }
-
   const response = await fetch('/registration', {
     method: 'POST',
     headers: {
