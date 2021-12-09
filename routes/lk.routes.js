@@ -10,7 +10,7 @@ router.post('/', async (req, res) => {
   await Card.create({
     about,
     location,
-    user_id: '1', // TODO: сейчас присваивает всегда id 1
+    user_id: 1, // TODO: сейчас присваивает всегда id 1
   });
   res.json({
     about,

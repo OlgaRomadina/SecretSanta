@@ -67,7 +67,7 @@ h3 {
   padding: 20px 40px;
 }
 
-.alert {
+.alert, .alertReg {
   width: 400px;
   height: 140px;
   border-radius: 10px;
