@@ -5,7 +5,7 @@ const Filestore = require('session-file-store')(session);
 const path = require('path');
 
 const lkRouter = require('./routes/lk.routes');
-const loginRouter = require('./routes/login');
+const loginRouter = require('./routes/login.routes');
 const regRouter = require('./routes/registration.routes');
 const indexRouter = require('./routes/index.routes');
 
