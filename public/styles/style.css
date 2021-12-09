@@ -1,10 +1,17 @@
 body {
+  color: white;
   font-size: 16px;
   font-family: 'Source Sans 3', sans-serif;
+  background-image: url(https://s1.1zoom.me/big0/471/Winter_Christmas_Night_Snow_Spruce_Christmas_tree_575032_1280x800.jpg);
 }
 
 p {
   font-size: 16px;
+  color: rgb(211, 211, 211);
+}
+
+a:visited {
+  color: white;
 }
 
 .card {
@@ -20,6 +27,8 @@ p {
   width: 600px;
   margin: 0 auto;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 input {
@@ -58,19 +67,29 @@ button:hover {
 
 h2 {
   font-size: 35px;
+  color: white;
   text-align: center;
 }
 
 h3 {
   text-align: center;
+  color: white;
 }
 
 .card {
-  width: 400px,
+  width: 400px;
   -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
   -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
   box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-  padding: 20px 40px;
+  padding: 5px 40px;
+}
+
+.card-admin {
+  width: 400px;
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  padding: 5px 40px;
 }
 
 .alert, .alertReg {
@@ -95,8 +114,18 @@ nav ul li {
   right: 0px;
 }
 
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.logo {
+  position: fixed;
+}
+
 nav a {
   text-decoration: none;
+  color: white;
 }
 
 .notFound {
