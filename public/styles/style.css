@@ -16,6 +16,7 @@ a:visited {
 .card {
   display: none;
   margin-top: 40px;
+  background-color: white;
 }
 
 .editCard {
