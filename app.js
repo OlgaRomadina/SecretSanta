@@ -8,6 +8,7 @@ const lkRouter = require('./routes/lk.routes');
 const loginRouter = require('./routes/login.routes');
 const regRouter = require('./routes/registration.routes');
 const indexRouter = require('./routes/index.routes');
+const adminRouter = require('./routes/admin.routes');
 
 const PORT = process.env.PORT ?? 3000;
 
@@ -38,6 +39,7 @@ app.use('/', indexRouter);
 app.use('/lk', lkRouter);
 app.use('/login', loginRouter);
 app.use('/registration', regRouter);
+app.use('/adminLk', adminRouter);
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
