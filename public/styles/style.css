@@ -74,6 +74,7 @@ h2 {
 h3 {
   text-align: center;
   color: rgb(36, 36, 36);
+  margin-top: 0;
 }
 
 .card {
@@ -81,7 +82,7 @@ h3 {
   -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
   -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
   box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-  padding: 5px 40px;
+  padding: 20px 40px;
   background-color: #fff;
 }
 
@@ -93,6 +94,12 @@ h3 {
   padding: 5px 40px;
   background-color: #fff;
   margin-top: 20px;
+}
+
+.cardDescription, .cardLocation {
+  font-family: 'Caveat', cursive;
+  font-size: 30px;
+  margin: 0px;
 }
 
 .alert, .alertReg, .alertLk {
