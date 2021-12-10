@@ -1,0 +1,22 @@
+<h2>Регистрация</h2>
+<form name="regForm" action="/registration" method="POST">
+  
+  <input type="text" name="login" placeholder="Введите логин" minlength="4" required/>
+  <br>
+  <br>
+  <input type="email" name="email" placeholder="Введите мейл" required/>
+  <br>
+  <br>
+  <input type="password" name="password1" placeholder="Введите пароль" minlength="8" required/>
+  <br>
+  <br>
+  <input type="password" name="password2" placeholder="Повторите пароль" minlength="8" required/>
+  <br>
+  <br>
+  <button type="submit">Зарегистрироваться</button>
+</form>
+
+<div class="alertReg">
+  <h3 class="alertMsgReg"></h3>
+  <button class="closeBtnReg">Закрыть</button>
+</div>

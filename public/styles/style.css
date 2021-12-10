@@ -1,0 +1,180 @@
+body {
+  font-size: 16px;
+  font-family: 'Source Sans 3', sans-serif;
+  background-color: #fff;
+}
+
+nav {
+  align-self: flex-end;
+}
+
+p {
+  font-size: 16px;
+  color: rgb(36, 36, 36);
+}
+
+a:visited {
+  color: rgb(36, 36, 36);
+}
+
+.card {
+  background-color: white;
+}
+
+.editCard {
+  display: none;
+}
+
+.container {
+  width: 600px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  width: 100%;
+  height: 40px;
+  border-radius: 15px;
+  border: 1px solid rgb(225, 225, 225);
+  font-size: 16px;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+}
+
+input:checked {
+  background-color: blanchedalmond;
+}
+
+button {
+  width: 250px;
+  height: 50px;
+  font-size: 16px;
+  background-color: #F2584E;
+  color: rgb(242, 242, 242);
+  border: none;
+  border-radius: 15px;
+  transition: .3s;
+  position: relative;
+  transform: translate(-50%, 0); 
+  left: 50%;
+  cursor: pointer;
+}
+
+.redButton {
+  width: 100%;
+  margin: 20px auto 0;
+}
+
+button:hover {
+  background-color: #A6443D;
+  border-radius: 15px;
+}
+
+h2 {
+  font-size: 35px;
+  color: rgb(36, 36, 36);
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+  color: rgb(36, 36, 36);
+  margin-top: 0;
+}
+
+.card {
+  width: 400px;
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  padding: 20px 40px;
+  margin-top: 5px;
+  background-color: #fff;
+}
+
+.card-admin {
+  width: 400px;
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  padding: 5px 40px;
+  background-color: #fff;
+  margin-top: 20px;
+}
+
+.cardDescription, .cardLocation {
+  font-family: 'Caveat', cursive;
+  font-size: 40px;
+  margin: 0px;
+}
+
+.alert, .alertReg, .alertLk {
+  width: 400px;
+  height: 140px;
+  border-radius: 10px;
+  position: absolute;
+  right: 20%;
+  top: 50%;
+  background-color: rgb(244, 232, 214);
+  display: none;
+}
+
+.alert h3, .alertLk h3, .alertReg h3, .alertLkA h3 {
+  margin-top: 20px;
+}
+
+
+.closeBtn {
+  margin-top: 10px;
+}
+
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 10px;
+  right: 0px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.logo {
+  position: fixed;
+}
+
+.grinch {
+  position: fixed;
+  display: none;
+}
+
+.grinch img {
+  width: 400px;
+}
+
+nav a {
+  text-decoration: none;
+  color: rgb(36, 36, 36);
+}
+
+.notFound {
+  font-size: 400px;
+  margin: 0;
+} 
+
+.change-bg2 {
+  display: none;
+}
+
+.change-bg, .change-bg2 {
+  background-color: rgb(71, 171, 28);
+}
+
+.change-bg:hover, .change-bg2:hover {
+  background-color: rgb(42, 99, 18);
+}
+

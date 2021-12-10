@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/style.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet"> 
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet"> 
+  <script src="/js/card.js" defer></script>
+  <script src="/js/registration.js" defer></script>
+  <script src="/js/login.js" defer></script>
+  <script src="/js/admin.js" defer></script>
+  <script src="/js/draw.js" defer></script>
+  <title>{{title}}</title>
+</head>
+<body>
+  <div class="logo">
+    <img src="https://st.depositphotos.com/1028979/3515/i/600/depositphotos_35151461-stock-photo-santa-claus-standing-on-white.jpg" alt="">
+  </div>
+  <div class="grinch">
+    <img src="/img/grinch.png" alt="">
+  </div>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="/">Главная</li>
+        {{#if isUser}}
+        <li><a href="/lk">Личный кабинет</a></li>
+        <li><a href="/logout">Выйти</a></li>
+        {{else}}
+        <li><a href="/registration">Регистрация</a></li>
+        <li><a href="/login">Войти</a></li>
+        {{!-- <li><a href="/logout">Выйти</a></li> --}}
+        {{/if}}
+      </ul>
+    </nav>
+  {{{body}}}
+  </div>
+  <script src="/js/snow.js"></script>
+  <br>
+  <button class="change-bg">Украсть Рождество</button>
+  <button class="change-bg2">Вернуть Рождество</button>
+</body>
+</html>
