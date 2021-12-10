@@ -1,11 +1,15 @@
 const router = require('express').Router();
 const { Card } = require('../db/models');
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
   if (!req.session.user_id) {
     res.redirect('/');
   } else {
-    res.render('lk', { isUser: req.session });
+    const card = await Card.findOne({ where: { user_id: req.session.user_id } });
+    res.render('lk', {
+      isUser: req.session.user_id,
+      card,
+    });
   }
 });
 
@@ -42,7 +46,7 @@ router.put('/', async (req, res) => {
   try {
     await Card.update(
       { about, location },
-      { where: { user_id: req.session.user_id } },
+      { where: { user_id: req.session.user_id } }
     );
     res.json({
       about,
