@@ -2,7 +2,11 @@ const router = require('express').Router();
 const { Card } = require('../db/models');
 
 router.get('/', (req, res) => {
-  res.render('lk');
+  if (!req.session.user_id) {
+    res.redirect('/');
+  } else {
+    res.render('lk', { isUser: req.session });
+  }
 });
 
 router.post('/', async (req, res) => {
@@ -38,7 +42,7 @@ router.put('/', async (req, res) => {
   try {
     await Card.update(
       { about, location },
-      { where: { user_id: req.session.user_id } }
+      { where: { user_id: req.session.user_id } },
     );
     res.json({
       about,
