@@ -10,6 +10,7 @@ const regRouter = require('./routes/registration.routes');
 const indexRouter = require('./routes/index.routes');
 const adminRouter = require('./routes/admin.routes');
 const logoutRouter = require('./routes/logout.routes');
+const drawRouter = require('./routes/draw.routes');
 
 const PORT = process.env.PORT ?? 3000;
 
@@ -42,6 +43,7 @@ app.use('/login', loginRouter);
 app.use('/registration', regRouter);
 app.use('/adminLk', adminRouter);
 app.use('/logout', logoutRouter);
+app.use('/draw', drawRouter);
 
 app.get('*', (req, res) => {
   res.render('404');
