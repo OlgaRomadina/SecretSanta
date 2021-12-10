@@ -123,6 +123,15 @@ nav ul {
   position: fixed;
 }
 
+.grinch {
+  position: fixed;
+  display: none;
+}
+
+.grinch img {
+  width: 400px;
+}
+
 nav a {
   text-decoration: none;
   color: rgb(36, 36, 36);
@@ -132,3 +141,15 @@ nav a {
   font-size: 400px;
   margin: 0;
 } 
+
+.change-bg2 {
+  display: none;
+}
+
+.change-bg, .change-bg2 {
+  background-color: rgb(71, 171, 28);
+}
+
+.change-bg:hover, .change-bg2:hover {
+  background-color: rgb(42, 99, 18);
+}
