@@ -27,6 +27,7 @@ document.login?.addEventListener('submit', async (event) => {
     return;
   }
   window.location.href = '/lk';
+  
 });
 
 closeBtn?.addEventListener('click', () => {
