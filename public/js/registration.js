@@ -26,7 +26,7 @@ regSubmit?.addEventListener('submit', async (event) => {
   });
 
   const result = await response.json();
-  if (result.thisUser) {
+  if (result.isUser) {
     alertMsgReg.innerHTML = result.message;
     alertDivReg.style.display = 'block';
   } else {
@@ -37,5 +37,5 @@ regSubmit?.addEventListener('submit', async (event) => {
 
 closeBtnReg?.addEventListener('click', () => {
   alertDivReg.style.display = 'none';
-  window.location.href = '/login';
+  window.location.href = '/lk';
 });

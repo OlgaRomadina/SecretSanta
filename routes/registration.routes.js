@@ -10,7 +10,7 @@ router.post('/', async (req, res) => {
   const { login, email, password } = req.body;
   if (password.length < 8) {
     res.json({
-      thisUser: false,
+      isUser: false,
       message: 'Длина пароля должна быть больше 8-ми символов',
     });
   }
@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
 
   if (findLogin) {
     res.json({
-      thisUser: false,
+      isUser: false,
       message: 'Пользователь с таким логином или почтой уже существует',
     });
   } else {
@@ -41,9 +41,9 @@ router.post('/', async (req, res) => {
     req.session.isAdmin = newUser.isAdmin;
   }
   if (newUser) {
-    res.json({ thisUser: true, message: 'Регистрация прошла успешно' });
+    res.json({ isUser: true, message: 'Регистрация прошла успешно' });
   } else {
-    res.json({ thisUser: false, message: 'Регистрация не прошла' });
+    res.json({ isUser: false, message: 'Регистрация не прошла' });
   }
 });
 
