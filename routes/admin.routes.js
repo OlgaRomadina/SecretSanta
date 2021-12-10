@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Card } = require('../db/models');
 
 router.get('/', async (req, res) => {
-  if (req.session.isAdmin) {
+  if (req.session.isAdmin === 'true') {
     const cards = await Card.findAll({
       raw: true,
     });
