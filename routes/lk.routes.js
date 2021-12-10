@@ -5,10 +5,16 @@ router.get('/', async (req, res) => {
   if (!req.session.user_id) {
     res.redirect('/');
   } else {
-    const card = await Card.findOne({ where: { user_id: req.session.user_id } });
+    const cardGiver = await Card.findOne({
+      where: { giver_id: req.session.user_id },
+    });
+    const card = await Card.findOne({
+      where: { user_id: req.session.user_id },
+    });
     res.render('lk', {
       isUser: req.session.user_id,
       card,
+      cardGiver,
     });
   }
 });
