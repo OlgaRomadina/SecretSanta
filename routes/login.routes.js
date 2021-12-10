@@ -21,10 +21,14 @@ router.post('/', async (req, res) => {
 
   const isAuthenticate = await bcrypt.compare(password, user.password);
   if (isAuthenticate) {
-    req.session.name = user.login;
+    req.session.login = user.login;
+    req.session.user_id = user.id;
+    req.session.email = user.email;
+    req.session.isAdmin = user.isAdmin;
+    
     res.json({
       isCorrectPassword: true,
-      name: user.login,
+      // login: user.login,
       isUser: true,
     });
     return;

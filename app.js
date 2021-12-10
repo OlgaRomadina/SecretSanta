@@ -9,6 +9,7 @@ const loginRouter = require('./routes/login.routes');
 const regRouter = require('./routes/registration.routes');
 const indexRouter = require('./routes/index.routes');
 const adminRouter = require('./routes/admin.routes');
+const logoutRouter = require('./routes/logout.routes');
 
 const PORT = process.env.PORT ?? 3000;
 
@@ -40,6 +41,7 @@ app.use('/lk', lkRouter);
 app.use('/login', loginRouter);
 app.use('/registration', regRouter);
 app.use('/adminLk', adminRouter);
+app.use('/logout', logoutRouter);
 
 app.get('*', (req, res) => {
   res.render('404');
