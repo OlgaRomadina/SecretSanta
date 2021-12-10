@@ -3,8 +3,10 @@ const { Card } = require('../db/models');
 const draw = require('../helper/randomizer');
 
 router.put('/', async (req, res) => {
-  const cards = await Card.findAll();
+  
+  const cards = await Card.findAll({ raw: true });
   const givers = draw(cards);
+  console.log(givers)
   cards.map(async (card, index) => {
     await card.update({ giver_id: givers[index] });
   });
@@ -13,3 +15,5 @@ router.put('/', async (req, res) => {
   // }
   res.json({ successful : true });
 });
+
+module.exports = router;
