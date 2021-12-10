@@ -34,6 +34,11 @@ router.post('/', async (req, res) => {
       isAdmin: false,
       password: hashedPassword,
     });
+
+    req.session.login = newUser.login;
+    req.session.user_id = newUser.id;
+    req.session.email = newUser.email;
+    req.session.isAdmin = newUser.isAdmin;
   }
   if (newUser) {
     res.json({ thisUser: true, message: 'Регистрация прошла успешно' });

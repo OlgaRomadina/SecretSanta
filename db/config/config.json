@@ -1,8 +1,8 @@
 {
   "development": {
-    "username": "andreybarkhatov",
-    "password": null,
-    "database": "secretsanta",
+    "username": "postgres",
+    "password": "password",
+    "database": "secretSanta",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
