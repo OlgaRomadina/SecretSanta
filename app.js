@@ -12,6 +12,8 @@ const adminRouter = require('./routes/admin.routes');
 const logoutRouter = require('./routes/logout.routes');
 const drawRouter = require('./routes/draw.routes');
 
+// const checkAdmin = require('./middlewares/checkAdmin');
+
 const PORT = process.env.PORT ?? 3000;
 
 const app = express();
@@ -36,6 +38,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(morgan('dev'));
 app.use(session(sessionConfig));
+
+// app.use(checkAdmin);
 
 app.use('/', indexRouter);
 app.use('/lk', lkRouter);

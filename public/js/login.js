@@ -26,8 +26,12 @@ document.login?.addEventListener('submit', async (event) => {
     alertDiv.style.display = 'block';
     return;
   }
+  if (responseJson.isAdmin) {
+    window.location.href = '/adminLk';
+    return;
+  }
+
   window.location.href = '/lk';
-  
 });
 
 closeBtn?.addEventListener('click', () => {
