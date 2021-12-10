@@ -6,16 +6,22 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-  const { about, location } = req.body;
-  await Card.create({
-    about,
-    location,
-    user_id: req.session.user_id,
-  });
-  res.json({
-    about,
-    location,
-  });
+  try {
+    const { about, location } = req.body;
+    await Card.create({
+      about,
+      location,
+      user_id: req.session.user_id,
+    });
+    res.json({
+      about,
+      location,
+    });
+  } catch (error) {
+    res.json({
+      error: error.message,
+    });
+  }
 });
 
 router.delete('/', async (req, res) => {

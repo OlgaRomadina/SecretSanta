@@ -12,6 +12,10 @@ const changeBg2 = document.querySelector('.change-bg2');
 const logo = document.querySelector('.logo');
 const grinch = document.querySelector('.grinch');
 
+const alertDivLk = document.querySelector('.alertLk');
+const alertMsgLk = document.querySelector('.alertMsgLk');
+const closeBtnLk = document.querySelector('.closeBtnLk');
+
 createCardForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
   const { method, action } = event.target;
@@ -27,12 +31,16 @@ createCardForm?.addEventListener('submit', async (event) => {
   });
 
   const data = await response.json();
-
-  cardDescription.innerHTML = data.about;
-  cardLocation.innerHTML = data.location;
-  card.style.display = 'block';
-  updBtn.style.display = 'block';
-  createCardForm.style.display = 'none';
+  if (!data.error) {
+    cardDescription.innerHTML = data.about;
+    cardLocation.innerHTML = data.location;
+    card.style.display = 'block';
+    updBtn.style.display = 'block';
+    createCardForm.style.display = 'none';
+  } else {
+    alertMsgLk.innerHTML = 'У вас уже есть карточка!';
+    alertDivLk.style.display = 'block';
+  }
 });
 
 delBtn?.addEventListener('click', async (event) => {
@@ -90,4 +98,8 @@ changeBg2.addEventListener('click', () => {
   grinch.style.display = 'none';
   changeBg.style.display = 'block';
   changeBg2.style.display = 'none';
+});
+
+closeBtnLk?.addEventListener('click', () => {
+  alertDivLk.style.display = 'none';
 });

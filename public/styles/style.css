@@ -92,7 +92,7 @@ h3 {
   padding: 5px 40px;
 }
 
-.alert, .alertReg {
+.alert, .alertReg, .alertLk {
   width: 400px;
   height: 140px;
   border-radius: 10px;
@@ -102,6 +102,7 @@ h3 {
   background-color: rgb(244, 232, 214);
   display: none;
 }
+
 
 .closeBtn {
   margin-top: 10px;
