@@ -63,6 +63,11 @@ button {
   cursor: pointer;
 }
 
+.redButton {
+  width: 100%;
+  margin: 20px auto;
+}
+
 button:hover {
   background-color: #A6443D;
   border-radius: 15px;
