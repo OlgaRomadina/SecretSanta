@@ -145,3 +145,11 @@ nav a {
 .change-bg2 {
   display: none;
 }
+
+.change-bg, .change-bg2 {
+  background-color: rgb(71, 171, 28);
+}
+
+.change-bg:hover, .change-bg2:hover {
+  background-color: rgb(42, 99, 18);
+}
