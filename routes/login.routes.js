@@ -25,7 +25,7 @@ router.post('/', async (req, res) => {
     req.session.user_id = user.id;
     req.session.email = user.email;
     req.session.isAdmin = user.isAdmin;
-    
+
     res.json({
       isCorrectPassword: true,
       // login: user.login,
