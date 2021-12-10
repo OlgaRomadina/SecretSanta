@@ -2,7 +2,7 @@
 const snowMax = 25;
 
 // Snowflake Colours
-const snowColor = ['lightblue'];
+const snowColor = ['blue'];
 
 // Snow Entity
 const snowEntity = '&#x2022;';

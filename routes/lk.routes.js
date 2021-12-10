@@ -12,6 +12,7 @@ router.get('/', async (req, res) => {
       where: { user_id: req.session.user_id },
     });
     res.render('lk', {
+      title: 'Cabinet',
       isUser: req.session.user_id,
       card,
       cardGiver,
@@ -52,7 +53,7 @@ router.put('/', async (req, res) => {
   try {
     await Card.update(
       { about, location },
-      { where: { user_id: req.session.user_id } }
+      { where: { user_id: req.session.user_id } },
     );
     res.json({
       about,
