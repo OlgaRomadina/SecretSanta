@@ -8,13 +8,17 @@ function shuffle(array) {
 function draw(cards) {
   const givers = [...cards];
   shuffle(givers);
+  // console.log('givers', givers);
 
   const shuffledGivers = givers
-    .map((giver, index, array) => ((giver.user_id == cards[index].user_id)
-      ? ([giver, array[index + 1]] = [array[index + 1], giver])
-      : giver));
-    
-      return shuffledGivers;
+    .map((giver, index, array) => {
+      if (giver.user_id === cards[index].user_id) {
+        ([giver, array[index + 1]] = [array[index + 1], giver]);
+        return giver;
+      } return giver;
+    });
+  // console.log('shuffledGivers', shuffledGivers);
+  return shuffledGivers;
 
   // cards.map((card, index) => card.giver_id = shuffledGivers[index].user_id);
 }
