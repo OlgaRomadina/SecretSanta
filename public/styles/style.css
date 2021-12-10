@@ -113,6 +113,10 @@ h3 {
   display: none;
 }
 
+.alert h3, .alertLk h3, .alertReg h3 {
+  margin-top: 20px;
+}
+
 
 .closeBtn {
   margin-top: 10px;
