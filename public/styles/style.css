@@ -65,7 +65,7 @@ button {
 
 .redButton {
   width: 100%;
-  margin: 20px auto;
+  margin: 20px auto 0;
 }
 
 button:hover {
@@ -91,6 +91,7 @@ h3 {
   -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
   box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
   padding: 20px 40px;
+  margin-top: 5px;
   background-color: #fff;
 }
 
@@ -121,7 +122,7 @@ h3 {
   display: none;
 }
 
-.alert h3, .alertLk h3, .alertReg h3 {
+.alert h3, .alertLk h3, .alertReg h3, .alertLkA h3 {
   margin-top: 20px;
 }
 
@@ -176,3 +177,4 @@ nav a {
 .change-bg:hover, .change-bg2:hover {
   background-color: rgb(42, 99, 18);
 }
+

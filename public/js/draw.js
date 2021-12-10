@@ -1,7 +1,11 @@
 const redButton = document.querySelector('.redButton');
 
-redButton.addEventListener('click', async (event) => {
-  const response = await fetch('/draw', { method: 'put' });
-  const gotDrow = await response.json();
-  console.log(gotDrow);
+const alertDivLkA = document.querySelector('.alertLkA');
+const alertMsgLkA = document.querySelector('.alertMsgLkA');
+const closeBtnLkA = document.querySelector('.closeBtnLkA');
+
+redButton?.addEventListener('click', async () => {
+  await fetch('/draw', { method: 'put' });
+  alertMsgLkA.innerHTML = 'Шалость удалась!';
+  alertDivLkA.style.display = 'block';
 });

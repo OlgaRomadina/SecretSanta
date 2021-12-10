@@ -7,8 +7,11 @@
   <p class="cardDescription">{{card.about}}</p>
   <p><b>Куда отправлять:</b></p>
   <p class="cardLocation">{{card.location}}</p>
+  {{#if card.giver_id}}
+  {{else}}
   <p><a href="" class="updBtn">Редактировать карточку</a></p>
   <p><a href="" class="delBtn">Удалить карточку</a></p>
+  {{/if}}
 </div>
 {{else}}
 <form name="js-create-card" class="js-create-card" action="/lk" method="POST">
@@ -19,6 +22,15 @@
   <br><br>
   <button type="submit" class="create-card-btn">Создать карточку</button>
 </form>
+{{/if}}
+{{#if card.giver_id}}
+  <div class="card">
+  <h3>Карточка кому дарить</h3>
+  <p><b>Описание:</b></p>
+  <p class="cardDescription">{{cardGiver.about}}</p>
+  <p><b>Куда отправлять:</b></p>
+  <p class="cardLocation">{{cardGiver.location}}</p>
+</div>
 {{/if}}
 
 <div class="editCard">
