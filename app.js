@@ -18,6 +18,8 @@ const PORT = process.env.PORT ?? 3000;
 
 const app = express();
 
+app.locals.title = 'Secret Santa';
+
 const sessionConfig = {
   store: new Filestore(),
   name: 'user_sid',
