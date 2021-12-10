@@ -1,5 +1,16 @@
 <h2>Личный кабинет</h2>
 
+{{#if card}}
+<div class="card">
+  <h3>Ваша карточка:</h3>
+  <p><b>Описание:</b></p>
+  <p class="cardDescription">{{card.about}}</p>
+  <p><b>Куда отправлять:</b></p>
+  <p class="cardLocation">{{card.location}}</p>
+  <p><a href="" class="updBtn">Редактировать карточку</a></p>
+  <p><a href="" class="delBtn">Удалить карточку</a></p>
+</div>
+{{else}}
 <form name="js-create-card" class="js-create-card" action="/lk" method="POST">
   <h3>Создать карточку</h3>
   <input type="text" name="aboutInput" placeholder="Что хотите получить?" minlength="2" required>
@@ -8,16 +19,7 @@
   <br><br>
   <button type="submit" class="create-card-btn">Создать карточку</button>
 </form>
-
-<div class="card">
-  <h3>Ваша карточка:</h3>
-  <p><b>Описание:</b></p>
-  <p class="cardDescription"></p>
-  <p><b>Куда отправлять:</b></p>
-  <p class="cardLocation"></p>
-  <p><a href="" class="updBtn">Редактировать карточку</a></p>
-  <p><a href="" class="delBtn">Удалить карточку</a></p>
-</div>
+{{/if}}
 
 <div class="editCard">
   <h3>Редактировать карточку</h3>

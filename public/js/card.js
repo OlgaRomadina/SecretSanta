@@ -16,6 +16,9 @@ const alertDivLk = document.querySelector('.alertLk');
 const alertMsgLk = document.querySelector('.alertMsgLk');
 const closeBtnLk = document.querySelector('.closeBtnLk');
 
+const hiddenFormCreate = document.querySelector('.js-create-card-hidden');
+const cardHidden = document.querySelector('.card-hidden');
+
 createCardForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
   const { method, action } = event.target;
@@ -32,11 +35,7 @@ createCardForm?.addEventListener('submit', async (event) => {
 
   const data = await response.json();
   if (!data.error) {
-    cardDescription.innerHTML = data.about;
-    cardLocation.innerHTML = data.location;
-    card.style.display = 'block';
-    updBtn.style.display = 'block';
-    createCardForm.style.display = 'none';
+    window.location.href = '/lk';
   } else {
     alertMsgLk.innerHTML = 'У вас уже есть карточка!';
     alertDivLk.style.display = 'block';
@@ -48,12 +47,7 @@ delBtn?.addEventListener('click', async (event) => {
   await fetch('/lk', {
     method: 'DELETE',
   });
-
-  cardDescription.innerHTML = '';
-  cardLocation.innerHTML = '';
-  createCardForm.style.display = 'block';
-  card.style.display = 'none';
-  editCard.style.display = 'none';
+  window.location.href = '/lk';
 });
 
 updBtn?.addEventListener('click', async (event) => {
