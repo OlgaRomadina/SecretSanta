@@ -24,9 +24,14 @@
     <nav>
       <ul>
         <li><a href="/">Главная</li>
-        <li><a href="/login">Логин</a></li>
-        <li><a href="/registration">Регистрация</a></li>
+        {{#if isUser}}
         <li><a href="/lk">Личный кабинет</a></li>
+        <li><a href="/logout">Выйти</a></li>
+        {{else}}
+        <li><a href="/registration">Регистрация</a></li>
+        <li><a href="/login">Войти</a></li>
+        <li><a href="/logout">Выйти</a></li>
+        {{/if}}
       </ul>
     </nav>
   {{{body}}}
