@@ -2,17 +2,17 @@ const router = require('express').Router();
 const { Card } = require('../db/models');
 
 router.get('/', async (req, res) => {
-const cards = await Card.findAll({
-  raw: true
-})
-// console.log(cards);
+  const cards = await Card.findAll({
+    raw: true,
+  });
+  // console.log(cards);
   res.render('adminLk', {
-    cards: cards
-  })
-}) 
+    cards,
+  });
+});
 
 router.delete('/', async (req, res) => {
-  const cardId = req.body.cardId
+  const { cardId } = req.body;
   console.log(req.body.cardId);
   console.log('lala');
   try {
@@ -24,4 +24,3 @@ router.delete('/', async (req, res) => {
 });
 
 module.exports = router;
-
