@@ -26,13 +26,11 @@ router.post('/', async (req, res) => {
     req.session.email = user.email;
     req.session.isAdmin = user.isAdmin;
 
-
-    if (req.session.isAdmin) {
+    if (req.session.isAdmin === 'true') {
       res.json({
-        isAdmin: req.session.isAdmin,
+        isAdmin: true,
         isUser: true,
         isCorrectPassword: true,
-
       });
       return;
     }
@@ -40,6 +38,7 @@ router.post('/', async (req, res) => {
       isCorrectPassword: true,
       // login: user.login,
       isUser: true,
+      isAdmin: false,
     });
     return;
   }
